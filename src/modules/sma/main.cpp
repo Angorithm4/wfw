@@ -89,8 +89,8 @@ int main(int argc, char *argv[]) {
     init_Map(TypeMap);
     Currency = TypeMap[Currency];
 
-    std::cout << "Decode your command and generate HTTP request ..." << std::endl;
-    std::cout << std::endl;
+    // std::cout << "Decode your command and generate HTTP request ..." << std::endl;
+    // std::cout << std::endl;
 
     // #1.4 User input -> URL
     // 1. Period1 and Period2
@@ -108,8 +108,8 @@ int main(int argc, char *argv[]) {
     // 3. Conbine into URL
     URL = QUERY + Currency + '?' + "period1=" + std::to_string(start) + '&' + "period2=" + std::to_string(end) + '&' + "interval=" + Period + "&events=history&includeAdjustedClose=true";
 
-    std::cout << "Generate Completed! Now sending the request ..." << std::endl;
-    std::cout << std::endl;
+    // std::cout << "Generate Completed! Now sending the request ..." << std::endl;
+    // std::cout << std::endl;
 
     // Step #2 Fetch the CSV Data From Requested URL file and return the string
     CurlObj Test(URL); 

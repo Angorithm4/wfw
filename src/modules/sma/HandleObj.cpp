@@ -24,7 +24,7 @@ public:
 	// TODO
 	// caculate the SMA -> each day just caculate prev 10 days SMA
 	// just move the iterator - 10
-	cout << "Caculate Monthly SMA_bias..." << endl;
+	// cout << "Caculate Monthly SMA_bias..." << endl;
 
 	// caculate first 10 days SMA
 	double suma = 0;     // sum  (sum/10 = simple moving average)
@@ -143,7 +143,7 @@ public:
 	}
 
 	if (buyed) Property += cshare * *(cdays.end()-1);
-	cout << endl;
+	// cout << endl;
 	cout << "New Balance: " << setprecision(10) << Property << endl;
     }
 
@@ -232,7 +232,7 @@ private:
 	cshare = property / dcp; // see how many shares we can buy
 	double cost = cshare * dcp;
 	property -= cost;
-	cout << "Buy " << cshare << " shares of stock, Account balance: $" << setprecision(10) << property << endl;
+	// cout << "Buy " << cshare << " shares of stock, Account balance: $" << setprecision(10) << property << endl;
     }
 
     void sell(double& property, double dcp, int& cshare) {
@@ -240,8 +240,8 @@ private:
 	double earned = cshare * dcp;
 	cshare = 0;
 	property += earned;
-	cout << "Sell all stocks, Earned $" << setprecision(10) << earned << ", Account balance: $" << setprecision(10) << property << endl;
-	cout << endl;
+	// cout << "Sell all stocks, Earned $" << setprecision(10) << earned << ", Account balance: $" << setprecision(10) << property << endl;
+	// cout << endl;
     }
 
 };
