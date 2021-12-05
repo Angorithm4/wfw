@@ -20,7 +20,7 @@
           SMA Earn Money Test
         </div>
         <div class="content_section_text">
-	    <form action="/var/www/wfw/sma.php" method="post">
+	    <form action="/var/www/wfw/src/pages/sma.php" method="post">
 	     <p><b>Which Company:</b>                       <input type="text" name="company" /></p>
 	     <p><b>Frequency:(Daily/Weekly/Monthly)</b>     <input type="text" name='freq' /></p>
 	     <p><b>SMA Interval:</b>                        <input type="number" name = 'inter' /></p>
@@ -41,10 +41,13 @@
           Real-Time Stock Fetcher
         </div>
         <div class="content_section_text">
-	    <form action="/var/www/wfw/rtstock.php" method="post">
-	     <p><b>Which Company:</b>                       <input type="text" name="company" /></p>
-	     <p><b><input type="submit" value="Get!"/></b></p>
-	    </form>
+	    <?php
+	    $company = htmlspecialchars($_POST['company']);
+
+	    $ret = shell_exec("/var/www/wfw/src/modules/sma/a.out $company");
+	    
+	    echo "<pre>$ret</pre>"
+	    ?>
 	</div>
 
         <div class="section_header">

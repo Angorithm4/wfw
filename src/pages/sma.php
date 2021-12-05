@@ -19,34 +19,23 @@
           <div id="about"></div>
           SMA Earn Money Test
         </div>
-        <div class="content_section_text">
-	    <form action="/var/www/wfw/sma.php" method="post">
-	     <p><b>Which Company:</b>                       <input type="text" name="company" /></p>
-	     <p><b>Frequency:(Daily/Weekly/Monthly)</b>     <input type="text" name='freq' /></p>
-	     <p><b>SMA Interval:</b>                        <input type="number" name = 'inter' /></p>
-	     <p><b>Start Date (DD/MM/YY)</b>                <input type="text" name="start" /></p>
-	     <p><b>End Date (DD/MM/YY)</b>                  <input type="text" name="end" /></p>
-	     <p><b><input type="submit" value="Calculate!"/></b></p>
-	    </form>
+	  <?php
+	    $company = htmlspecialchars($_POST['company']);
+	    $freq = htmlspecialchars($_POST['freq']);
+	    $start = htmlspecialchars($_POST['start']);
+	    $end = htmlspecialchars($_POST['end']);
 
-          <p>
+	    $ret = shell_exec("/var/www/wfw/src/modules/sma/a.out $company $freq $start $end");
+	    
+	    echo "<pre>$ret</pre>"
+	  ?>
                 If you are a normal user of this web site and don't know what this page is
                 about, this probably means that the site is currently unavailable due to
                 maintenance.
                 If the problem persists, please contact the site's <a href="https://github.com/Angold-4">administrator</a>.
           </p>
-        </div>
-        <div class="section_header section_header_red">
-          <div id="about"></div>
-          Real-Time Stock Fetcher
-        </div>
-        <div class="content_section_text">
-	    <form action="/var/www/wfw/rtstock.php" method="post">
-	     <p><b>Which Company:</b>                       <input type="text" name="company" /></p>
-	     <p><b><input type="submit" value="Get!"/></b></p>
-	    </form>
-	</div>
 
+        </div>
         <div class="section_header">
           <div id="changes"></div>
 		Acknowledgement
@@ -94,14 +83,11 @@
                         </li>
           </ul>
         </div>
-          <p>
-                If you are a normal user of this web site and don't know what this page is
-                about, this probably means that the site is currently unavailable due to
-                maintenance.
-                If the problem persists, please contact the site's <a href="https://github.com/Angold-4">administrator</a>.
-          </p>
+
 
       </div>
+    </div>
+    <div class="validator">
     </div>
   </body>
 </html>

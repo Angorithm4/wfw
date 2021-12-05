@@ -75,13 +75,16 @@ long parse(std::string date) {
 
 
 int main(int argc, char *argv[]) {
-    bool ST = true; // input bool
-    std::string Currency = argv[1]; // the input data type
+    if (argc != 6) return -1;
+
     std::unordered_map<std::string, std::string> TypeMap;
     std::string URL = ""; // fetching URL
+    
+    std::string Currency = argv[1]; // the input data type
     std::string Period = argv[2];
-    std::string Start = argv[3];
-    std::string End = argv[4];
+    int interval = stoi(argv[3]);
+    std::string Start = argv[4];
+    std::string End = argv[5];
 
     int start = 0;
     int end = 0;
@@ -117,6 +120,6 @@ int main(int argc, char *argv[]) {
 
     // Step #3 Handle the Data
     HandleObj* TObj = new HandleObj(Test.getData());
-    TObj->SMA();
+    TObj->SMA(interval);
     // TObj->print_monbias();
 }

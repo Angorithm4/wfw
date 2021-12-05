@@ -10,21 +10,28 @@
       <div class="page_header floating_element">
         <img src="/icons/ubuntu-logo.png" alt="Ubuntu Logo" class="floating_element"/>
         <span class="floating_element">
-          Under Development
+          Page Under Development
         </span>
       </div>
       <div class="content_section floating_element">
 
-	<div class="content_section_text"> 
-		Hi <?php echo htmlspecialchars($_POST['name']); ?>.
-		You are <?php echo (int)$_POST['age']; ?> years old.
-	</div>
-
         <div class="section_header section_header_red">
           <div id="about"></div>
-          It works!
+          SMA Earn Money Test
         </div>
         <div class="content_section_text">
+
+	  <?php
+	    $company = htmlspecialchars($_POST['company']);
+	    $freq = htmlspecialchars($_POST['freq']);
+	    $start = htmlspecialchars($_POST['start']);
+	    $end = htmlspecialchars($_POST['end']);
+
+	    $ret = shell_exec("/var/www/wfw/src/modules/sma/a.out $company $freq $start $end");
+	    
+	    echo "<pre>$ret</pre>"
+	  ?>
+
           <p>
                 This is the default welcome page used to test the correct 
                 operation of the Apache2 server after installation on Ubuntu systems.

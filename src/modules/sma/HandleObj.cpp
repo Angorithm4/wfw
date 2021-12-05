@@ -102,7 +102,7 @@ public:
     }
 
 
-    void SMA() {
+    void SMA(int offset) {
 	// little project -> see if I can make money
 	// improving algorithm
 	
@@ -112,8 +112,7 @@ public:
 	bool buyed = false;
 	
 	int index = 0;
-	int offset = 10; // prev 10 days
-	while (index < 10) {
+	while (index < offset) {
 	    suma += cdays[index];
 	    index++;
 	}
@@ -246,17 +245,3 @@ private:
 
 };
 
-/*
-int main() {
-    // just for test
-    ifstream infile("./Test.txt"); // test file
-    stringstream buffer; // read buffer
-    buffer << infile.rdbuf();
-    // cout << buffer.str() << endl;
-    string data = buffer.str();
-
-    HandleObj* TObj = new HandleObj(data);
-    TObj->SMA();
-    TObj->print_monbias();
-}
-*/
