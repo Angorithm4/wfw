@@ -15,18 +15,25 @@
       </div>
       <div class="content_section floating_element">
 
+	<form action="action.php" method="post">
+	 <p>Your name: <input type="text" name="name" /></p>
+	 <p>Your age: <input type="text" name="age" /></p>
+	 <p><input type="submit" /></p>
+	</form>
+
         <div class="section_header section_header_red">
           <div id="about"></div>
           SMA Earn Money Test
         </div>
         <div class="content_section_text">
-	    <form action="sma.php" method="post">
-	     <p>Which Company:                       <input type="text" name="company" /></p>
-	     <p>Frequency:(Daily/Weekly/Monthly)     <input type="text" name="age" /></p>
-	     <p>Start Date (DD/MM/YY)                <input type="text" name="start" /></p>
-	     <p>End Date (DD/MM/YY)                  <input type="text" name="end" /></p>
-	     <p><input type="submit" />Calculate!</p>
-	    </form>
+
+	  <?php>
+	    $output=null
+	    $retval=null
+	    exec('a.out', $output, $retval);
+	    echo "Returned with status $retval and output:\n";
+	    print_r($output);
+	  <?>
 
           <p>
                 This is the default welcome page used to test the correct 
