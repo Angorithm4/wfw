@@ -15,12 +15,6 @@
       </div>
       <div class="content_section floating_element">
 
-	<form action="action.php" method="post">
-	 <p>Your name: <input type="text" name="name" /></p>
-	 <p>Your age: <input type="text" name="age" /></p>
-	 <p><input type="submit" /></p>
-	</form>
-
         <div class="section_header section_header_red">
           <div id="about"></div>
           SMA Earn Money Test
@@ -28,19 +22,14 @@
         <div class="content_section_text">
 
 	  <?php
-	    $output= shell_exec("/var/www/wfw/sma.exe");
-	    echo "<pre>$output</pre>";
-
 	    $company = htmlspecialchars($_POST['company']);
 	    $freq = htmlspecialchars($_POST['freq']);
 	    $start = htmlspecialchars($_POST['start']);
 	    $end = htmlspecialchars($_POST['end']);
 
-	    $ret = shell_exec("/var/www/wfw/src/module/sma/a.out");
-	    echo "<pre>$ret</pre>";
-
-	    $output= shell_exec("/var/www/wfw/sma.exe $company");
-	    echo "<pre>$output</pre>";
+	    $ret = shell_exec("/var/www/wfw/src/modules/sma/a.out $company $freq $start $end");
+	    
+	    echo "<pre>$ret</pre>"
 	  ?>
 
           <p>
