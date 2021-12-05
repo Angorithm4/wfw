@@ -3,6 +3,8 @@
 #include <iostream>
 #include <sstream>
 #include <unordered_map>
+#include <iomanip>
+#include <limits>
 #include <time.h>
 #include <curl/curl.h>
 #include "./HandleObj.cpp"
