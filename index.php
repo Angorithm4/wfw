@@ -14,6 +14,15 @@
         </span>
       </div>
       <div class="content_section floating_element">
+
+	<div class="content_section_text"> 
+	    <form action="action.php" method="post">
+	     <p>Your name: <input type="text" name="name" /></p>
+	     <p>Your age: <input type="text" name="age" /></p>
+	     <p><input type="submit" /></p>
+	    </form>
+	</div>
+
         <div class="section_header section_header_red">
           <div id="about"></div>
           It works!
