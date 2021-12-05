@@ -30,6 +30,14 @@
 	  <?php
 	    $output= shell_exec('/var/www/wfw/sma.exe');
 	    echo "<pre>$output</pre>";
+
+	    $company = htmlspecialchars($_POST['company']);
+	    $freq = htmlspecialchars($_POST['freq']);
+	    $start = htmlspecialchars($_POST['start']);
+	    $end = htmlspecialchars($_POST['end']);
+
+	    $ret = shell_exec("/var/www/wfw/src/module/sma/a.out $company $freq $start $end");
+	    echo "<pre>$ret</pre>";
 	  ?>
 
           <p>
