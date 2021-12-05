@@ -27,13 +27,10 @@
         </div>
         <div class="content_section_text">
 
-	  <?php>
-	    $output=null
-	    $retval=null
-	    exec('a.out', $output, $retval);
-	    echo "Returned with status $retval and output:\n";
-	    print_r($output);
-	  <?>
+	  <?php
+	    $output= shell_exec('/var/www/wfw/sma.exe');
+	    echo "<pre>$output</pre>";
+	  ?>
 
           <p>
                 This is the default welcome page used to test the correct 
