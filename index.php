@@ -22,7 +22,7 @@
         <div class="content_section_text">
 	    <form action="sma.php" method="post">
 	     <p>Which Company:                       <input type="text" name="company" /></p>
-	     <p>Frequency:(Daily/Weekly/Monthly)     <input type="text" name="age" /></p>
+	     <p>Frequency:(Daily/Weekly/Monthly)     <input type="text" name="freq" /></p>
 	     <p>Start Date (DD/MM/YY)                <input type="text" name="start" /></p>
 	     <p>End Date (DD/MM/YY)                  <input type="text" name="end" /></p>
 	     <p><input type="submit" />Calculate!</p>
