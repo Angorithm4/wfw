@@ -16,8 +16,8 @@
       <div class="content_section floating_element">
 
 	<div class="content_section_text"> 
-	    Welcome <?php echo $_GET["name"]; ?><br>
-	    Your email address is: <?php echo $_GET["email"]; ?>
+		Hi <?php echo htmlspecialchars($_POST['name']); ?>.
+		You are <?php echo (int)$_POST['age']; ?> years old.
 	</div>
 
         <div class="section_header section_header_red">
