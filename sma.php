@@ -20,30 +20,25 @@
           SMA Earn Money Test
         </div>
         <div class="content_section_text">
-	  <?php
-	    $company = htmlspecialchars($_POST['company']);
-	    $freq = htmlspecialchars($_POST['freq']);
-	    $inter = htmlspecialchars($_POST['inter']);
-	    $start = htmlspecialchars($_POST['start']);
-	    $end = htmlspecialchars($_POST['end']);
+          <?php
+            $company = htmlspecialchars($_POST['company']);
+            $freq = htmlspecialchars($_POST['freq']);
+            $inter = htmlspecialchars($_POST['inter']);
+            $start = htmlspecialchars($_POST['start']);
+            $end = htmlspecialchars($_POST['end']);
 
-	    $ret = shell_exec("/var/www/wfw/src/modules/sma/a.out $company $freq $start $end");
-	    
-	    echo "<pre>$ret</pre>"
-	  ?>
-          <p>
-                If you are a normal user of this web site and don't know what this page is
-                about, this probably means that the site is currently unavailable due to
-                maintenance.
-                If the problem persists, please contact the site's <a href="https://github.com/Angold-4">administrator</a>.
-          </p>
+            $ret = shell_exec("/var/www/wfw/src/modules/sma/a.out $company $freq $inter $start $end");
+
+            echo "<pre>$ret</pre>"
+          ?>
         </div>
+
         <div class="section_header section_header_red">
           <div id="about"></div>
           Real-Time Stock Fetcher
         </div>
         <div class="content_section_text">
-	    <form action="/var/www/wfw/src/pages/rtstock.php" method="post">
+	    <form action="rtstock.php" method="post">
 	     <p><b>Which Company:</b>                       <input type="text" name="company" /></p>
 	     <p><b><input type="submit" value="Get!"/></b></p>
 	    </form>
@@ -64,11 +59,9 @@
           <pre>
 .
 ├── LICENSE
-├── action.php
 ├── index.css
 ├── index.php
-├── main.cpp
-├── sma.exe
+├── rtstock.php
 ├── sma.php
 └── src
     └── modules
@@ -89,6 +82,10 @@
 
                         <li>
                            <tt>sma.php</tt> is the page which tell the server to run the sma module code (written in C++)
+                        </li>
+
+                        <li>
+                           <tt>rtstock.php</tt> is the page which tell the server to run the real-time stock module code (written in C++)
                         </li>
 
                         <li>
