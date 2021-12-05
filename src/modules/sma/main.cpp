@@ -76,12 +76,12 @@ long parse(std::string date) {
 
 int main(int argc, char *argv[]) {
     bool ST = true; // input bool
-    std::string Currency = argv[1]; // the input data type
+    std::string Currency = "ABC"; // the input data type
     std::unordered_map<std::string, std::string> TypeMap;
     std::string URL = ""; // fetching URL
-    std::string Period = argv[2];
-    std::string Start = argv[3];
-    std::string End = argv[4];
+    std::string Period = "Daily";
+    std::string Start = "01/01/2011";
+    std::string End = "01/01/2021";
 
     int start = 0;
     int end = 0;
