@@ -74,61 +74,20 @@ long parse(std::string date) {
 }
 
 
-int main() {
+int main(int argc, char *argv[]) {
     bool ST = true; // input bool
-    std::string Currency = ""; // the input data type
+    std::string Currency = argv[1]; // the input data type
     std::unordered_map<std::string, std::string> TypeMap;
     std::string URL = ""; // fetching URL
-    std::string Period;
-    std::string Start;
-    std::string End;
+    std::string Period = argv[2];
+    std::string Start = argv[3];
+    std::string End = argv[4];
 
     int start = 0;
     int end = 0;
 
-
-
     init_Map(TypeMap);
-
-
-    // Step #1 User input -> Request URL
-    // #1.1 Data Type
-    while (ST) {
-	std::cout << "Please input the data type you wants to fetch: (Type ? for help)" << std::endl;
-	std::string input;
-	std::cin >> input;
-
-	if (input == "?") {
-	    std::cout << "Supported Data Type:" << std::endl;
-	    std::cout << "USD/JPY" << ", " << "USD/HKD" << ", " << "USD/CNY" << std::endl;
-	    std::cout << "AUD/USD" << ", " << "USD/CAD" << ", " << "USD/EUR" << std::endl;
-	    std::cout << "GBP/USD" << ", " << "USD/THB" << ", " << "USD/INR" << std::endl;
-	} 
-
-	else if (TypeMap.find(input) == TypeMap.end()) {
-	    std::cout << "Invalid or Not Supported Data Type!" << std::endl;
-	}
-
-	else {
-	    Currency = TypeMap[input];
-	    ST = false;
-	}
-    }
-
-
-    // #1.2 Period
-    // TODO Add user-friendly features
-    std::cout << "Please enter the frequency period: (Daily/Weekly/Monthly)" << std::endl;
-    std::cin >> Period;
-
-
-    // #1.3 Start and End Year
-    // TODO Add user-friendly features
-    std::cout << "Please enter the start date (format: DD/MM/YYYY)" << std::endl;
-    std::cin >> Start;
-
-    std::cout << "Please enter the end date (format: DD/MM/YYYY)" << std::endl;
-    std::cin >> End;
+    Currency = TypeMap[Currency];
 
     std::cout << "Decode your command and generate HTTP request ..." << std::endl;
     std::cout << std::endl;
@@ -157,8 +116,6 @@ int main() {
     // std::cout << Test.getData() << std::endl;
 
     // Step #3 Handle the Data
-    // TODO 
-    // Trading Group Project -> USD / JPY
     HandleObj* TObj = new HandleObj(Test.getData());
     TObj->SMA();
     // TObj->print_monbias();
