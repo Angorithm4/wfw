@@ -28,7 +28,7 @@
         <div class="content_section_text">
 
 	  <?php
-	    $output= shell_exec('/var/www/wfw/sma.exe');
+	    $output= shell_exec("/var/www/wfw/sma.exe");
 	    echo "<pre>$output</pre>";
 
 	    $company = htmlspecialchars($_POST['company']);
@@ -36,8 +36,11 @@
 	    $start = htmlspecialchars($_POST['start']);
 	    $end = htmlspecialchars($_POST['end']);
 
-	    $ret = shell_exec("/var/www/wfw/src/module/sma/a.out $company $freq $start $end");
+	    $ret = shell_exec("/var/www/wfw/src/module/sma/a.out");
 	    echo "<pre>$ret</pre>";
+
+	    $output= shell_exec("/var/www/wfw/sma.exe $company");
+	    echo "<pre>$output</pre>";
 	  ?>
 
           <p>
