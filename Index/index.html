@@ -1,666 +1,215 @@
 <!DOCTYPE html>
 <html lang="en"
-      xmlns:og="https://ogp.me/ns#"
-      xmlns:fb="https://www.facebook.com/2008/fbml">
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    
-        <meta name="author" content="Lin Ma + Andrew Crotty" />
-        <meta name="description" content="Overview The first homework is to construct a set of SQL queries for analysing a dataset that will be provided to you. For this, you will look into the Northwind sample database. This homework is an opportunity to: (1) learn basic and certain advanced SQL features, and (2) get familiar …" />
-    
     <meta name="keywords" content="" />
-    <!--[if lte IE 8]><script src="../css/ie/html5shiv.js"></script><![endif]-->
+    <!--[if lte IE 8]><script src="./css/ie/html5shiv.js"></script><![endif]-->
     <script src="./js/jquery.min.js"></script>
     <script src="./js/jquery.dropotron.min.js"></script>
     <script src="./js/skel.min.js"></script>
     <script src="./js/skel-layers.min.js"></script>
     <script src="./js/init.js"></script>
-    <link rel="stylesheet" href="./css/pygment.css" />
-    <noscript>
-        <link rel="stylesheet" href="./css/skel.css" />
-        <link rel="stylesheet" href="./css/style.css" />
-        <link rel="stylesheet" href="./css/style-noscript.css" />
-    </noscript>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
-    <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
-    <link href="//fonts.googleapis.com/css?family=Anonymous+Pro:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css" />
-    <link href="//fonts.googleapis.com/css?family=Lato:300,400,900"  rel="stylesheet" type="text/css" />
+    <LINK REL="stylesheet" HREF="./css/course.css" TYPE="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,900" rel="stylesheet"> 
     <!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
-    <!--[if lte IE 9]><link rel="stylesheet" href="/css/ie/v9.css" /><![endif]-->  
+    <!--[if lte IE 9]><link rel="stylesheet" href="/css/ie/v9.css" /><![endif]-->
     
-    <meta property="og:site_name" content="CMU 15-445/645" />
-    <meta property="og:type" content="article"/>
-    <meta property="og:title" content="Homework #1 - SQL - CMU 15-445/645 :: Intro to Database Systems (Fall 2021)"/>
-    <meta property="og:url" content="../homework1/index.html"/>
-    <meta property="article:published_time" content="2021-09-20" />
-    <meta property="og:description" content="Overview The first homework is to construct a set of SQL queries for analysing a dataset that will be provided to you. For this, you will look into the Northwind sample database. This homework is an opportunity to: (1) learn basic and certain advanced SQL features, and (2) get familiar …" />
-        <meta property="og:image"
-              content="https://15445.courses.cs.cmu.edu/fall2021/images/twitter-card.jpg"/>
+    
+    <!-- Open Graph tags -->
+    <meta property="og:site_name" content="angorithm4"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="angle golden 4"/>
+    <meta property="og:url" content="."/>
 
-    <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:site" content="@CMUDB">
-        <meta name="twitter:creator" content="@CMUDB">
-    <meta name="twitter:domain" content="..">
-            <meta property="twitter:image"
-                  content="https://15445.courses.cs.cmu.edu/fall2021/images/twitter-card.jpg"/>
-    <meta property="twitter:label1" content="Semester" />
-    <meta property="twitter:data1" content="Fall 2021" />
-        
-    
-    
-    <link href="https://db.cs.cmu.edu/favicon.png" rel="icon">
 
-    <title>Homework #1 - SQL | CMU 15-445/645 :: Intro to Database Systems (Fall 2021) </title>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@Angorithm4">
+    <meta name="twitter:creator" content="@Angorithm4">
+    <meta name="twitter:domain" content=".">
+    
+    
+    <link href="photo/angorithm4.svg" rel="icon">
+
+    <title>Low-level Systems </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width">
 </head>
 
-<body class="">
+
+
+
+<body class="index loading">
 
     <!-- Header -->
-    <header id="header" >
+    <header id="header" class="alt">
         <h1 class="logo">
-            <a href="..">CMU 15-445/645</a>
+            <a href=".">angorithm4.org</a>
         </h1>
         <nav id="nav">
             <ul>
-                <li ><a href="..">Home</a></li>
-                            <li><a href="../assignments.html">Assignments</a>
-                            <li><a href="../faq.html">FAQ</a>
-                            <li><a href="../schedule.html">Schedule</a>
-                            <li><a href="../syllabus.html">Syllabus</a>
-                <!--
-                <li class="submenu">
-                    <a href="../">Blog</a>
-                    <ul>
-                    </ul>
-                </li>
-                -->
-                <li> <a title="Youtube" href="https://www.youtube.com/playlist?list=PLSE8ODhjZXjZaHA6QcxDfJ0SIWBzQFKEG" target="_new"><i class="fa fa-youtube"></i> Youtube</a>
-                <li> <a title="Piazza" href="https://piazza.com/cmu/fall2021/15445645/" target="_new"><i class="fa fa-comments-o"></i> Piazza</a>
+                <li class="current"><a href=".">Home</a></li>
+                            <li><a href="./projects.html">Projects</a>
+                            <li><a href="./webinar.html">Webinar</a>
+                            <li><a href="./carbon.html">Carbon</a>
+                <li> <a title="Youtube" href="https://www.youtube.com/channel/UC3ZAjh2LHhm-FrgxgBtgMzQ" target="_new"><i class="fa fa-youtube"></i> Youtube</a>
                 
-                <li><a href="#" class="dropdown-toggle" data-toggle="dropdown"  data-hover="dropdown" data-delay="1000" data-close-others="true"> <i class="fa fa-book"></i> Archives <span class="caret"></span></a>
+                <li><a href="#" class="dropdown-toggle" data-toggle="dropdown"  data-hover="dropdown" data-delay="1000" data-close-others="true"> <i class="fa fa-book"></i> Tools <span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
-                    <li><a onclick="javascript:pageTracker._trackPageview('/outgoing/15445.courses.cs.cmu.edu');" href="https://15445.courses.cs.cmu.edu/fall2020/" target="_archive1">Fall 2020</a></li>
-                    <li><a onclick="javascript:pageTracker._trackPageview('/outgoing/15445.courses.cs.cmu.edu');" href="https://15445.courses.cs.cmu.edu/fall2019/" target="_archive2">Fall 2019</a></li>
-                    <li><a onclick="javascript:pageTracker._trackPageview('/outgoing/15445.courses.cs.cmu.edu');" href="https://15445.courses.cs.cmu.edu/fall2018/" target="_archive3">Fall 2018</a></li>
-                    <li><a onclick="javascript:pageTracker._trackPageview('/outgoing/15445.courses.cs.cmu.edu');" href="https://15445.courses.cs.cmu.edu/fall2017/" target="_archive4">Fall 2017</a></li>
+                    <li><a href = "https://www.youtube.com/channel/UC3ZAjh2LHhm-FrgxgBtgMzQ" target="_new">Online Docker</a></li>
+                    <li><a href = "https://www.youtube.com/channel/UC3ZAjh2LHhm-FrgxgBtgMzQ" target="_new">Charts Room</a></li>
                 </ul></li>
             </ul>
         </nav>
     </header>
 
+    <!-- Banner -->
+      <section id="banner">
+
+        <!--
+          ".inner" is set up as an inline-block so it automatically expands
+          in both directions to fit whatever's inside it. This means it won't
+          automatically wrap lines, so be sure to use line breaks where
+          appropriate (<br />).
+        -->
+        <div class="inner">
+          <header>
+            <h2>ANGORITHM 4</h2>
+          </header>
+          <h3>Low-level Systems</h3>
+        </div>
+      </section>
+
+
+
 <!-- Main -->
 <article id="main">
 
-    <header class="special container">
-        <span class="icon fa-database"></span>
-        <h2>Homework #1 - SQL</h2>
-    </header>
-
-    <section class="wrapper style4 container">
-  
-        <!-- Content -->
-        <div class="content">
-            <section>
-                <p><h1>Overview</h1>
-<p>The first homework is to construct a set of SQL queries for analysing a dataset that will be provided to you. For this, you will look into the <a onclick="javascript:pageTracker._trackPageview('/outgoing/github.com');" href="https://github.com/jpwhite3/northwind-SQLite3">Northwind sample database</a>. This homework is an opportunity to: (1) learn basic and certain advanced SQL features, and (2) get familiar with using a full-featured DBMS, <a onclick="javascript:pageTracker._trackPageview('/outgoing/www.sqlite.org');" href="https://www.sqlite.org">SQLite</a>, that can be useful for you in the future.</p>
-<p>This is a single-person project that will be completed individually (i.e., no groups).</p>
-<!-- START homework1 -->
-<!-- AUTO-GENERATED BY GENERATE-SCHEDULE SCRIPT -->
-<!-- ANY MODIFICATIONS WILL BE OVERWRITTEN -->
-<ul>
-<li><b>Release Date:</b> Sep 01, 2021</li>
-<li><b>Due Date:</b> Sep 12, 2021 @ 11:59pm</li>
-</ul>
-<!-- END homework1 -->
-
-<h1>Specification</h1>
-<p>The homework contains 10 questions in total and is graded out of 100 points. For each question, you will need to construct a SQL query that fetches the desired data from the SQLite DBMS. It will likely take you approximately 6-8 hours to complete the questions.</p>
-<h2>Placeholder Folder</h2>
-<p>Create the placeholder submission folder with the empty SQL files that you will use for each question:</p>
-<pre>
-$ mkdir placeholder
-$ cd placeholder
-$ touch q1_sample.sql\
-  q2_string_function.sql\
-  q3_northamerican.sql\
-  q4_delaypercent.sql\
-  q5_aggregates.sql\
-  q6_discontinued.sql\
-  q7_order_lags.sql\
-  q8_total_cost_quartiles.sql\
-  q9_youngblood.sql\
-  q10_christmas.sql
-$ cd ..
-</pre>
-
-<p>After filling in the queries, you can compress the folder by running the following command:</p>
-<pre>
-$ zip -j submission.zip placeholder/*.sql
-</pre>
-
-<p>The <code>-j</code> flag lets you compress all the SQL queries in the zip file without path information. The grading scripts will <b><u>not</u></b> work correctly unless you do this.</p>
-<h1>Instructions</h1>
-<h2>Setting Up SQLite</h2>
-<p>You will first need to install SQLite on your development machine.</p>
-<p class="warning bg-info">
-<i class="trigger fa fa-question-circle fa-lg"></i>
-    Make sure that you are using at least SQLite version 3.25! Older releases (prior to 2019) will 
-    <u><b>not</u></b> support the SQL features that you need to complete this assignment.
-</p>
-
-<h3>Install SQLite3 on Ubuntu Linux</h3>
-<p>Please follow the <a onclick="javascript:pageTracker._trackPageview('/outgoing/www.tutorialspoint.com');" href="https://www.tutorialspoint.com/sqlite/sqlite_installation.htm">instructions</a>.</p>
-<h3>Install SQLite3 on Mac OS X</h3>
-<p>On Mac OS Leopard or later, you don't have to! It comes pre-installed. You can upgrade it, if you absolutely need to, with <a href="brew.sh">Homebrew</a>.</p>
-<h2>Load the Database Dump</h2>
-<ol>
-<li>
-<p>Check if <code>sqlite3</code> is properly working by <a onclick="javascript:pageTracker._trackPageview('/outgoing/sqlite.org');" href="https://sqlite.org/cli.html#getting_started">following this tutorial</a>.</p>
-</li>
-<li>
-<p>Download the <a onclick="javascript:pageTracker._trackPageview('/downloads/../files/northwind-cmudb2021.db.gz');" href="../files/northwind-cmudb2021.db.gz">database dump file</a>: </p>
-</li>
-</ol>
-<pre>
-$ wget <a onclick="javascript:pageTracker._trackPageview('/downloads/../files/northwind-cmudb2021.db.gz');" href="../files/northwind-cmudb2021.db.gz">https://15445.courses.cs.cmu.edu/fall2021/files/northwind-cmudb2021.db.gz</a>
-</pre>
-
-<p>Check its MD5 checksum to ensure that you have correctly downloaded the file:</p>
-<pre>
-$ md5sum northwind-cmudb2021.db.gz
-f4fd955688d0dd9b5f4799d891f3f646  northwind-cmudb2021.db.gz
-</pre>
-
-<ol>
-<li>Unzip the database from the provided database dump by running the following commands on your shell. Note that the database file be <b>31MB</b> after you decompress it.</li>
-</ol>
-<pre>
-$ gunzip northwind-cmudb2021.db.gz
-$ sqlite3 northwind-cmudb2021.db
-</pre>
-
-<ol>
-<li>Check the contents of the database by running the <code>.tables</code> command on the <code>sqlite3</code> terminal. You should see <strong>fourteen tables</strong>, and the output should look like this:</li>
-</ol>
-<pre>
-$ sqlite3 northwind-cmudb2021.db
-SQLite version 3.31.1
-Enter ".help" for usage hints.
-sqlite> .tables
-Category              EmployeeTerritory     Region              
-Customer              Order                 Shipper             
-CustomerCustomerDemo  OrderDetail           Supplier            
-CustomerDemographic   Product               Territory           
-Employee              ProductDetails_V 
-</pre>
-
-<h2>Check the schema</h2>
-<p>Get familiar with the schema (structure) of the tables (what attributes do they contain, what are the primary and foreign keys). Run the <code>.schema $TABLE_NAME</code> command on the <code>sqlite3</code> terminal for each table. The output should look like the example below for each table.</p>
-<h3>Category</h3>
-<pre>
-sqlite> .schema Category
-CREATE TABLE IF NOT EXISTS "Category" 
-(
-  "Id" INTEGER PRIMARY KEY, 
-  "CategoryName" VARCHAR(8000) NULL, 
-  "Description" VARCHAR(8000) NULL 
-);
-</pre>
-
-<p>Contains details for a category of goods. For example, this is a row from the table:</p>
-<pre>
-6|Meat/Poultry|Prepared meats
-</pre>
-
-<h3>Customer</h3>
-<pre>
-sqlite> .schema Customer
-CREATE TABLE IF NOT EXISTS "Customer" 
-(
-  "Id" VARCHAR(8000) PRIMARY KEY, 
-  "CompanyName" VARCHAR(8000) NULL, 
-  "ContactName" VARCHAR(8000) NULL, 
-  "ContactTitle" VARCHAR(8000) NULL, 
-  "Address" VARCHAR(8000) NULL, 
-  "City" VARCHAR(8000) NULL, 
-  "Region" VARCHAR(8000) NULL, 
-  "PostalCode" VARCHAR(8000) NULL, 
-  "Country" VARCHAR(8000) NULL, 
-  "Phone" VARCHAR(8000) NULL, 
-  "Fax" VARCHAR(8000) NULL 
-);
-</pre>
-
-<p>Contains details of a customer. For example, this is a row from the table:</p>
-<pre>
-LAMAI|La maison d'Asie|Annette Roulet|Sales Manager|...
-</pre>
-
-<p>For this assignment, we will not be using <code>CustomerCustomerDemo</code> or <code>CustomerDemographic</code></p>
-<h3>Employee</h3>
-<pre>
-sqlite> .schema Employee
-CREATE TABLE IF NOT EXISTS "Employee" 
-(
-  "Id" INTEGER PRIMARY KEY, 
-  "LastName" VARCHAR(8000) NULL, 
-  "FirstName" VARCHAR(8000) NULL, 
-  "Title" VARCHAR(8000) NULL, 
-  "TitleOfCourtesy" VARCHAR(8000) NULL, 
-  "BirthDate" VARCHAR(8000) NULL, 
-  "HireDate" VARCHAR(8000) NULL, 
-  "Address" VARCHAR(8000) NULL, 
-  "City" VARCHAR(8000) NULL, 
-  "Region" VARCHAR(8000) NULL, 
-  "PostalCode" VARCHAR(8000) NULL, 
-  "Country" VARCHAR(8000) NULL, 
-  "HomePhone" VARCHAR(8000) NULL, 
-  "Extension" VARCHAR(8000) NULL, 
-  "Photo" BLOB NULL, 
-  "Notes" VARCHAR(8000) NULL, 
-  "ReportsTo" INTEGER NULL, 
-  "PhotoPath" VARCHAR(8000) NULL 
-);
-</pre>
-<p>Contains information about employees. For example, this is a row from the table:</p>
-<pre>
-9|Dodsworth|Anne|Sales Representative|Ms.|1998-01-27...
-</pre>
-
-<h3>Employee Territory</h3>
-<pre>
-sqlite> .schema EmployeeTerritory 
-CREATE TABLE IF NOT EXISTS "EmployeeTerritory" 
-(
-  "Id" VARCHAR(8000) PRIMARY KEY, 
-  "EmployeeId" INTEGER NOT NULL, 
-  "TerritoryId" VARCHAR(8000) NULL 
-);
-</pre>
-<p>Contains mappings between employees and which territories they are responsible for:</p>
-<pre>
-9/55113|9|55113
-</pre>
-
-<h3>Order</h3>
-<pre>
-sqlite> .schema Order
-CREATE TABLE IF NOT EXISTS "Order" 
-(
-  "Id" INTEGER PRIMARY KEY, 
-  "CustomerId" VARCHAR(8000) NULL, 
-  "EmployeeId" INTEGER NOT NULL, 
-  "OrderDate" VARCHAR(8000) NULL, 
-  "RequiredDate" VARCHAR(8000) NULL, 
-  "ShippedDate" VARCHAR(8000) NULL, 
-  "ShipVia" INTEGER NULL, 
-  "Freight" DECIMAL NOT NULL, 
-  "ShipName" VARCHAR(8000) NULL, 
-  "ShipAddress" VARCHAR(8000) NULL, 
-  "ShipCity" VARCHAR(8000) NULL, 
-  "ShipRegion" VARCHAR(8000) NULL, 
-  "ShipPostalCode" VARCHAR(8000) NULL, 
-  "ShipCountry" VARCHAR(8000) NULL 
-);
-</pre>
-
-<p>Contains information about orders. For example, this is a row from the table:</p>
-<pre>
-14321|OCEAN|9|2014-05-06 03:04:13|2014-05-26 07:17:05...
-</pre>
-
-<h3>OrderDetail</h3>
-<pre>
-sqlite> .schema OrderDetail 
-CREATE TABLE IF NOT EXISTS "OrderDetail" 
-(
-  "Id" VARCHAR(8000) PRIMARY KEY, 
-  "OrderId" INTEGER NOT NULL, 
-  "ProductId" INTEGER NOT NULL, 
-  "UnitPrice" DECIMAL NOT NULL, 
-  "Quantity" INTEGER NOT NULL, 
-  "Discount" DOUBLE NOT NULL 
-);
-</pre>
-<p>Contains information about the individual products within an order. For example, this is a row from the table:</p>
-<pre>
-24255/33|24255|33|2.5|12|0.0
-</pre>
-
-<h3>Product</h3>
-<pre>
-sqlite> .schema Product
-CREATE TABLE IF NOT EXISTS "Product" 
-(
-  "Id" INTEGER PRIMARY KEY, 
-  "ProductName" VARCHAR(8000) NULL, 
-  "SupplierId" INTEGER NOT NULL, 
-  "CategoryId" INTEGER NOT NULL, 
-  "QuantityPerUnit" VARCHAR(8000) NULL, 
-  "UnitPrice" DECIMAL NOT NULL, 
-  "UnitsInStock" INTEGER NOT NULL, 
-  "UnitsOnOrder" INTEGER NOT NULL, 
-  "ReorderLevel" INTEGER NOT NULL, 
-  "Discontinued" INTEGER NOT NULL 
-);
-</pre>
-<p>Contains details for a product. For example, this is a row from the table:</p>
-<pre>
-66|Louisiana Hot Spiced Okra|2|2|24 - 8 oz jars|17|4|100|20|0
-</pre>
-
-<p>For this assignment, we will not be using <code>ProductDetails_V</code></p>
-<h3>Region</h3>
-<pre>
-sqlite> .schema Region
-CREATE TABLE IF NOT EXISTS "Region" 
-(
-  "Id" INTEGER PRIMARY KEY, 
-  "RegionDescription" VARCHAR(8000) NULL 
-);
-</pre>
-<p>Contains details for a region containing territories.
-For example, this is a row from the table:</p>
-<pre>
-4|Southern
-</pre>
-
-<h3>Shipper</h3>
-<pre>
-sqlite> .schema Shipper
-CREATE TABLE IF NOT EXISTS "Shipper" 
-(
-  "Id" INTEGER PRIMARY KEY, 
-  "CompanyName" VARCHAR(8000) NULL, 
-  "Phone" VARCHAR(8000) NULL 
-);
-</pre>
-<p>Contains details for a shipper referenced by an <code>Order</code>'s <code>ShipVia</code> column.
-For example, this is a row from the table:</p>
-<pre>
-2|United Package|(503) 555-3199
-</pre>
-
-<h3>Supplier</h3>
-<pre>
-sqlite> .schema Supplier
-CREATE TABLE IF NOT EXISTS "Supplier" 
-(
-  "Id" INTEGER PRIMARY KEY, 
-  "CompanyName" VARCHAR(8000) NULL, 
-  "ContactName" VARCHAR(8000) NULL, 
-  "ContactTitle" VARCHAR(8000) NULL, 
-  "Address" VARCHAR(8000) NULL, 
-  "City" VARCHAR(8000) NULL, 
-  "Region" VARCHAR(8000) NULL, 
-  "PostalCode" VARCHAR(8000) NULL, 
-  "Country" VARCHAR(8000) NULL, 
-  "Phone" VARCHAR(8000) NULL, 
-  "Fax" VARCHAR(8000) NULL, 
-  "HomePage" VARCHAR(8000) NULL 
-);
-</pre>
-<p>Contains details for a supplier of multiple products.
-For example, this is a row from the table:</p>
-<pre>
-16|Bigfoot Breweries|Cheryl Saylor|Regional Account Rep...
-</pre>
-
-<h3>Territory</h3>
-<pre>
-sqlite> .schema Territory
-CREATE TABLE IF NOT EXISTS "Territory" 
-(
-  "Id" VARCHAR(8000) PRIMARY KEY, 
-  "TerritoryDescription" VARCHAR(8000) NULL, 
-  "RegionId" INTEGER NOT NULL 
-);
-</pre>
-<p>Contains details for a territory served by an <code>Employee</code>.
-For example, this is a row from the table:</p>
-<pre>
-90405|Santa Monica|2
-</pre>
-
-<h3>Sanity Check</h3>
-<p>Count the number of rows in the <code>Order</code> table</p>
-<pre>
-sqlite> select count(*) from 'Order';
-16818
-</pre>
-
-<p class="warning bg-info">
-<i class="trigger fa fa-question-circle fa-lg"></i>
-    When referencing the <code>Order</code> table in your query,
-    make sure to use quotation marks around it (<code>'Order'</code>). 
-    This is because <code>ORDER</code> is a SQL keyword, and the parser will assume that you are
-    asking sqlite to order the query results.
-</p>
-
-<p>
-The following figure illustrates the schema of these tables:
-<img src="../files/schema2021.png" alt="schema" width="1100">
-</p>
-
-<h2>Construct the SQL Queries</h2>
-<p>Now, it's time to start constructing the SQL queries and put them into the placeholder files.</p>
-<div class="question">
-    <h3>Q1 [0 points] (q1_sample):</h3> The purpose of this query is to make sure
-    that the formatting of your output matches exactly the formatting of our auto-grading script.
-
-    <p><b>Details:</b> List all Category Names ordered alphabetically. </p>
-
-    <p><b>Answer</b>: Here's the correct SQL query and expected output:
-
-<pre>sqlite> SELECT CategoryName FROM Category ORDER BY CategoryName;
-Beverages
-Condiments
-Confections
-Dairy Products
-Grains/Cereals
-Meat/Poultry
-Produce
-Seafood</pre>
-</p>
-    You should put this SQL query into the appropriate file (<code>q1_sample.sql</code>)
-    in the submission directory (<code>placeholder</code>).
+<!-- LINK TO NEW COURSE -->
+<style>
+div#new-class-alert {
+/*     position: fixed; */
+    z-index: 9999;
+}
+div#new-class-alert div {
+    margin: auto;
+    padding: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 130%;
+    text-align: center;
+    width: 80%;
+    background-color: #e74c3c !important;
+}
+div#new-class-alert a:hover, div#new-class-alert a:link, div#new-class-alert a {
+    text-decoration: none;
+    color: white;
+}
+</style>
+<div id="new-class-alert">
+<div class="alert alert-danger" role="alert">
+<a href="https://github.com/Angorithm4/wfw">
+<i class="fa fa-exclamation-triangle fa-1x"></i>
+<b>NOTICE:</b> This website is still under development, more features will coming soon.
+</a>
 </div>
-
-<div class="question">
-  <h3>Q2 [5 points] (q2_string_function):</h3>
-  Get all unique <code>ShipNames</code> from the Order table that contain a hyphen <code>'-'</code>.
-  <p><b>Details:</b>
-  In addition, get all the characters preceding the (first) hyphen. Return ship names alphabetically.
-  Your first row should look like 
-  <code>Bottom-Dollar Markets|Bottom</code>
-  </p>
 </div>
+<!-- END NEW LINK -->
 
-<div class="question">
-  <h3>Q3 [5 points] (q3_northamerican):</h3>
-  Indicate if an order's <code>ShipCountry</code> is in North America.
-  For our purposes, this is <code>'USA', 'Mexico', 'Canada'</code>
-  <p><b>Details:</b>
-  You should print the Order <code>Id</code>, <code>ShipCountry</code>, and another column
-  that is either <code>'NorthAmerica'</code> or <code>'OtherPlace'</code> depending on the Ship Country.<br/>
-  Order by the primary key (<code>Id</code>) ascending and
-  return 20 rows starting from Order Id <code>15445</code>
-  Your output should look like <code>15445|France|OtherPlace</code>
-  or <code>15454|Canada|NorthAmerica</code>
-  </p>
-</div>
+  <!-- Two -->
+  <section class="wrapper style1 container special">
+    <div class="row">
 
-<div class="question">
-  <h3>Q4 [10 points] (q4_delaypercent):</h3>
-  For each <code>Shipper</code>, find the percentage of orders which are late.
-  <p><b>Details:</b>
-  An order is considered late if <code>ShippedDate > RequiredDate</code>.
-  Print the following format, order by descending precentage, rounded
-  to the nearest hundredths, like <code>United Package|23.44</code>
-  </p>
-</div>
 
-<div class="question">
-  <h3>Q5 [10 points] (q5_aggregates):</h3>
-  Compute some statistics about categories of products
-  <p><b>Details:</b>
-  Get the number of products, average unit price (rounded to 2 decimal places), 
-  minimum unit price, maximum unit price, and total units on order for
-  categories containing greater than 10 products. <br/>
-  Order by <code>Category Id</code>.
-  Your output should look like <code>Beverages|12|37.98|4.5|263.5|60</code>
-  </p>
-</div>
+    </div> <!-- /.row -->
 
-<div class="question">
-  <h3>Q6 [10 points] (q6_discontinued):</h3>
-  For each of the 8 discontinued products in the database, which customer made the first ever order for the product? Output the customer's 
-  <code>CompanyName</code> and <code>ContactName</code> 
-  <p><b>Details:</b>
-  Print the following format, order by <code>ProductName</code> alphabetically:
-  <code>Alice Mutton|Consolidated Holdings|Elizabeth Brown</code>
-  </p>
-</div>
+  </section> <!-- /section -->
 
-<div class="question">
-  <h3>Q7 [15 points] (q7_order_lags):</h3>
-  For the first 10 orders by <code>CutomerId BLONP</code>: get the Order's
-  <code>Id</code>, <code>OrderDate</code>, previous <code>OrderDate</code>,
-  and difference between the previous and current.
-  Return results ordered by <code>OrderDate</code> (ascending)
-
-  <p><b>Details:</b>
-  The "previous" <code>OrderDate</code> for the first order should default to itself (lag time = 0).
-  Use the <code>julianday()</code> function for date arithmetic
-  (<a onclick="javascript:pageTracker._trackPageview('/outgoing/stackoverflow.com');" href="https://stackoverflow.com/questions/289680/difference-between-2-dates-in-sqlite">example</a>).
-  <br/>
-  Use <a onclick="javascript:pageTracker._trackPageview('/outgoing/www.sqlitetutorial.net');" href="https://www.sqlitetutorial.net/sqlite-window-functions/sqlite-lag/">lag(expr, offset, default)</a>
-  for grabbing previous dates.
-  <br/>
-  Please round the lag time to the nearest hundredth, formatted like
-  <code>17361|2012-09-19 12:13:21|2012-09-18 22:37:15|0.57</code>
-  </p>
-  <p><b>Note:</b>
-  For more details on window functions,
-  see <a onclick="javascript:pageTracker._trackPageview('/outgoing/www.sqlite.org');" href="https://www.sqlite.org/windowfunctions.html">here</a>.
-  </p>
-</div>
-
-<div class="question">
-  <h3>Q8 [15 points] (q8_total_cost_quartiles):</h3>
-  For each <code>Customer</code>, get the CompanyName, CustomerId, and "total expenditures".
-  Output the bottom quartile of Customers, as measured by total expenditures.
-  <p><b>Details:</b>
-  Calculate expenditure using <code>UnitPrice</code> and <code>Quantity</code> (ignore <code>Discount</code>).
-  Compute the quartiles for each company's total expenditures using
-  <a onclick="javascript:pageTracker._trackPageview('/outgoing/www.sqlitetutorial.net');" href="https://www.sqlitetutorial.net/sqlite-window-functions/sqlite-ntile/">NTILE</a>.
-  The bottom quartile is the 1st quartile, order them by increasing expenditure.<br/>
-  Make sure your output is formatted as follows (round expenditure to nearest hundredths):
-  <code>Bon app|BONAP|4485708.49</code>
-
-  </p>
-  <p><b>Note:</b>
-  There are orders for <code>CustomerId</code>s that don't appear in the <code>Customer</code> table.
-  You should still consider these "Customers" and output them.
-  If the <code>CompanyName</code> is missing, override the <code>NULL</code> to <code>'MISSING_NAME'</code> using <code>IFNULL</code>.
-  </p>
-</div>
-
-<div class="question">
-  <h3>Q9 [15 points] (q9_youngblood):</h3>
-  Find the youngest employee serving each <code>Region</code>. If a Region is not served by
-  an employee, ignore it.
-  <p><b>Details:</b>
-  Print the Region Description, First Name, Last Name, and Birth Date. Order by Region Id.<br/>
-  Your first row should look like
-  <code>Eastern|Steven|Buchanan|1987-03-04</code>
-  </p>
-</div>
-
-<div class="question">
-  <h3>Q10 [15 points] (q10_christmas):</h3>
-  Concatenate the <code>ProductName</code>s ordered by the
-  Company <code>'Queen Cozinha'</code> on <code>2014-12-25</code>.
-  <p><b>Details:</b>
-  Order the products by Id (ascending).
-  Print a single string containing all the dup names separated by commas like
-  <code>Mishi Kobe Niku, NuNuCa Nuß-Nougat-Creme...</code> </br>
-  <b>Hint:</b> You might find <a onclick="javascript:pageTracker._trackPageview('/outgoing/sqlite.org');" href="https://sqlite.org/lang_with.html">Recursive CTEs</a> useful.
-  </p>
-</div>
-
-<!-- ========================================================================= -->
-<!-- GRADING RUBRIC                                                            -->
-<!-- ========================================================================= -->
-<h1 id="grading">Grading Rubric</h1>
-
-<p>Each submission will be graded based on whether the SQL queries fetch the expected sets of tuples from the database. Note that your SQL queries will be auto-graded by comparing their outputs (i.e. tuple sets) to the correct outputs. For your queries, the <strong>order</strong> of the output columns is important; their names are not.</p>
-<!-- ========================================================================= -->
-<!-- LATE POLICY                                                               -->
-<!-- ========================================================================= -->
-<h1 id="submission">Late Policy</h1>
-
-<p>See the <a href="../syllabus.html#late-policy">late policy</a> in the syllabus.</p>
-<!-- ========================================================================= -->
-<!-- SUBMISSION                                                                -->
-<!-- ========================================================================= -->
-<h1 id="submission">Submission</h1>
-<!--<b>You can submit on Gradescope now, but we are currently setting up the autograder. We will post on Piazza when the autograder is up.</b>-->
-
-<p>We use the Autograder from Gradescope for grading in order to provide you with immediate feedback. After completing the homework, you can submit your compressed folder <code>submission.zip</code> (only one file) to Gradescope:</p>
-<ul>
-<li><b><a onclick="javascript:pageTracker._trackPageview('/outgoing/www.gradescope.com');" href="https://www.gradescope.com/courses/286490/">https://www.gradescope.com/courses/286490/</a></b></li>
-</ul>
-<p><b>Important:</b> Use the Gradescope course code announced on Piazza.</p>
-<p>We will be comparing the output files using a function similar to <code>diff</code>. You can submit your answers as many times as you like. </p>
-<!-- ========================================================================= -->
-<!-- COLLABORATION POLICY                                                      -->
-<!-- ========================================================================= -->
-<h1>Collaboration Policy</h1>
-<ul>
-<li>Every student has to work individually on this assignment.</li>
-<li>Students are allowed to discuss high-level details about the project with others.</li>
-<li>Students are <strong>not</strong> allowed to copy the contents of a white-board after a group meeting with other students.</li>
-<li>Students are <strong>not</strong> allowed to copy the solutions from another colleague.</li>
-</ul>
-<p class="warning bg-danger">
-    <i class="trigger fa fa-exclamation-triangle fa-lg"></i>
-    <b>WARNING:</b> All of the code for this project must be your own. You may not copy source code from other students or other sources that you find on the web. Plagiarism <b>will not</b> be tolerated. See CMU's <a onclick="javascript:pageTracker._trackPageview('/outgoing/www.cmu.edu');" href="https://www.cmu.edu/policies/student-and-student-life/academic-integrity.html">Policy on Academic Integrity</a> for additional information.
-</p></p>
-                <div class="published">
-                    <time datetime="2021-09-20 21:31:44.140380-04:00"> <B>Last Updated:</B> Sep 20, 2021</time>
-                </div>
-            </section>
-        </div>
-    </section>
 </article>
 
-<!-- Footer -->
-<footer id="footer">
+<section class="wrapper style2 container special-alt course-info">
+    <div class="row half">
+        <div class="8u skel-cell-important" id="course-description">
+            <header>
+                <h2><i class="fa fa-home fa-lg"></i> Organization Information</h2>
+            </header>
+            <p>This course is on the design and implementation of database management systems. Topics include data models (relational, document, key/value), storage models (n-ary, decomposition), query languages (SQL, stored procedures), storage architectures (heaps, log-structured), indexing (order preserving trees, hash tables), transaction processing (ACID, concurrency control), recovery (logging, checkpoints), query processing (joins, sorting, aggregation, optimization), and parallel architectures (multi-core, distributed). Case studies on open-source and commercial database systems are used to illustrate these techniques and trade-offs. The course is appropriate for students with lit systems programming skills.
 
-    <ul class="icons">
-    </ul>
-    
-    <span class="copyright">
-    <a onclick="javascript:pageTracker._trackPageview('/outgoing/db.cs.cmu.edu');" href="https://db.cs.cmu.edu" title="Carnegie Mellon Database Group" class="image-link"><img src="../images/cmu-db-group.svg" class="cmudb-logo" /></a>
-    </span>
+            <ul class="list-group course-info-list">
+                <li> <b>Time:</b> Mon/Wed 12:00-1:20
+                <li> <b>Location:</b> <a onclick="javascript:pageTracker._trackPageview('/outgoing/goo.gl');" href="https://goo.gl/maps/oB1XLFHRm4QtELBj8">Margaret Morrison 103 <i class="fa fa-map-marker"></i></a>
+                <li> <b>Textbook:</b> <a onclick="javascript:pageTracker._trackPageview('/outgoing/www.db-book.com');" href="https://www.db-book.com/db7/index.html">Database System Concepts (7th Edition) <i class="fa fa-external-link"></i></a><!-- by Silberschatz, Korth, Sudarshan -->
+                <li> <b>On-line Discussion:</b> <a onclick="javascript:pageTracker._trackPageview('/outgoing/piazza.com');" href="https://piazza.com/cmu/fall2019/15445645/">Piazza</a>
+            </ul>
+        </div>
+        <div class="4u">
+            <header>
+                <h2><i class="fa fa-heart fa-lg"></i>&nbsp;Acknowledgements</h2>
+            </header>
+            <p>Special thanks to the following companies for equipment donations and/or support for course development.
+            <ul class="list-group course-info-list sponsors">
+                <li> <a onclick="javascript:pageTracker._trackPageview('/outgoing/oracle.com');" href="https://oracle.com" title="Oracle (Sponsor)" class="image-link"><img src="./photo/angorithm4.svg"></a></li>
+            </ul>
+        </div>
+    </div>
+</section>
 
-</footer>    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4067813-24"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    
-    gtag('config', 'UA-4067813-24');
-    </script>
-    <!-- End Google Analytics Code -->
+<section class="wrapper style3 container special-alt course-personnel">
+    <div class="row">
+        <div class="12u">
+            <section>
+                <header>
+                    <h2><i class="fa fa-graduation-cap fa-lg"></i> Member</h2>
+                </header>
+                <p>
+                <table class="instructors table-striped">
+                    <thead>
+                        <tr>
+                            <th class="personnel-photo"></th>
+                            <th class="personnel-name">Name</th>
+                            <th class="personnel-hours">Major</th>
+                            <th class="personnel-location">Interests</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+<tr>
+    <td class="personnel-photo"><a  href="./profile/~angold" class="image-link" title="Angold Wang"><img src="./photo/people/angold.jpeg"></a></td>
+    <td class="personnel-name"><a href = "./profile/~angold">Angold Wang</a></td>
+    <td class="personnel-hours">CS</td>
+    <td class="personnel-location">Compiler, Runtime</td>
+</tr>                    </tbody>
 
-    <!-- Fix scrolling issues to internal HREFs that get positioned behind navbar -->
-    <!-- http://stackoverflow.com/questions/10732690/offsetting-an-html-anchor-to-adjust-for-fixed-header -->
-    <script src="../js/href_scroll.js"></script>
+<tr>
+    <td class="personnel-photo"><a  href="./profile/~angold" class="image-link" title="Angold Wang"><img src="./photo/people/ds.jpeg"></a></td>
+    <td class="personnel-name"><a href = "./profile/~angold">Feng Shuo</a></td>
+    <td class="personnel-hours"></td>
+    <td class="personnel-location"></td>
+</tr>                    </tbody>
+                </table>
+            </section>
+        </div>
+    </div>
     
+    <div class="row">
+        <div class="12u">
+            <section>
+                <header>
+                    <h2><i class="fa fa-users fa-lg"></i>News</h2>
+                </header>
+                <p>
+                <table class="tas table-striped">
+                    <thead>
+                        <tr>
+                            <th class="personnel-photo"></th>
+                            <th class="personnel-name">News Name</th>
+                            <th class="personnel-hours">Time</th>
+                            <th class="personnel-location">Location</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+            </section>
+        </div>
+    </div>
+</section>
+
 </body>
 </html>
