@@ -1,16 +1,16 @@
 !function($){
 	 
- 	var defaults = {
-    speed: 1,
-    interaction: true,
-    size: Math.floor(Math.random() * 125) + 1,
-    count: Math.floor(Math.random() * 20) + 10,
-    opacity: 0,
-    color: "#ffffff",
-    windPower: Math.floor(Math.random() * 3),
-    image:  "images/head1.png",
-    image2: "images/head2.png",
-	};
+    var defaults = {
+	speed: 1,
+	interaction: true,
+	size: Math.floor(Math.random() * 125) + 1,
+	count: Math.floor(Math.random() * 20) + 10,
+	opacity: 0,
+	color: "#ffffff",
+	windPower: Math.floor(Math.random() * 3),
+	image:  "images/head1.png",
+	image2: "images/head2.png",
+    };
 	  
   $.fn.heads = function(options){
     var settings = $.extend({}, defaults, options),
@@ -153,8 +153,8 @@
               opacity = (Math.random() * 0.5) + settings.opacity;
       
           flakes.push({
-			  // Create a new property called 'imgNum' to hold either "" or "2";
-    		  imgNum: (settings.image2 && Math.floor(Math.random() * 2) === 0 ? "" : "2"),
+	      // Create a new property called 'imgNum' to hold either "" or "2";
+	      imgNum: (settings.image2 && Math.floor(Math.random() * 2) === 0 ? "" : "2"),
               speed: speed,
               velY: speed,
               velX: 0,
