@@ -50,7 +50,7 @@
 
           </p>
           <p>
-		This site is build by <a href="http://github.com/Angold-4">Angold Wang</a> and current host in a <a href="https://en.wikipedia.org/wiki/Raspberry_Pi"><b>Raspberry Pi 4B</b></a>.<br>
+		This site is built by <a href="http://github.com/Angold-4">Angold Wang</a> and current host in a <a href="https://en.wikipedia.org/wiki/Raspberry_Pi"><b>Raspberry Pi 4B</b></a>.<br>
 		You can find the source code <a href="https://github.com/Angorithm4/wfw">here</a> and below is the current basic structure of this project:
           </p>
           <pre>
