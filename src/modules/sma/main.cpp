@@ -110,6 +110,7 @@ int main(int argc, char *argv[]) {
 
     // 3. Conbine into URL
     URL = QUERY + Currency + '?' + "period1=" + std::to_string(start) + '&' + "period2=" + std::to_string(end) + '&' + "interval=" + Period + "&events=history&includeAdjustedClose=true";
+    std::cout << URL << std::endl;
 
     // std::cout << "Generate Completed! Now sending the request ..." << std::endl;
     // std::cout << std::endl;
