@@ -1,4 +1,4 @@
-<!-- the CSS File of angorith4.org -->
+<!-- the Index File of angorith4.org -->
 <!-- Designed by Angold Wang Dec 2021 -->
 
 <!DOCTYPE html>
@@ -39,7 +39,7 @@ Interpret!<br> The World.
 <div class="menu submenu" id="submenu">
 <ul>
 <li><a href='about.html'>About</a>
-<li><a href='carbon.html'>Carbon</a>
+<li><a href='carbon.php'>Carbon</a>
 <li><a href='llss.html'>LLSS</a>
 <li><a href='support.html'>Support</a>
 </ul>
@@ -98,61 +98,20 @@ return false;
 </script>
 
 
-
-
-<div class="rightsidebar desktoponly border2px">
-<h3 align="center">Low-Level Systems</h3>
-<ul class=nounderline>
-<li> <a href="llss.html">Check All</a> </li>
-<li> <a href="mips.html">MIPS-Simulator</a>
-<li> <a href="eval.html">Eval</a>
-<li> <a href="6035.html">6035</a>
-<li> <a href="dragon.html">DraGon</a>
-<li> <a href="a4.html">Angorithm4</a></li>
-<li> <a href="osdi.html">OSDI</a></li>
-<li> <a href="ja.html">JA</a></li>
-<li> <a href="bustub.html">BusTub</a></li>
-<li> <a href="games101.html">GAMES101</a> </li>
-<li> <a href="wfw.html">wfw</a></li>
-</ul>
+<div>
+<form action="tsma.php" method="post">
+ <p><b>Which Company:</b>                       <input type="text" name="company" /></p>
+ <p><b>Start Date (YYYY/MM/DD)</b>                <input type="text" name="start" /></p>
+ <p><b>End Date (YYYY/MM/DD)</b>                  <input type="text" name="end" /></p>
+ <p><b>SMA Interval:</b>                        <input type="number" name = 'offset' /></p>
+ <p><b>Initial Money:</b>                        <input type="number" name = 'money' /></p>
+ <p><b><input type="submit" value="Calculate!"/></b></p>
+</form>
 </div>
 
-<h2>What Is A4?</h2>
-
-<p>
-No scene from prehistory is quite so vivid as that of the mortal struggles of great beasts in the tar pits. In the mind's eye one sees dinosaurs, mammoths, and sabertoothed tigers struggling against the grip of the tar. The fiercer the struggle, the more entangling the tar, and no beast is so strong or so skillful but that he ultimately sinks.
-</p>
-
-<p>Large-system programming has over the past 50 years been such a tar pit, and many great and powerful beasts have thrashed violently in it. Like nine woman cannot make a baby in a month, we cannot just simply put 10 people work a whole month to complete the work that a single person can finish in 10 months. Sometimes, just like the tar pit, the more people or effort you put in, the more chaos and bugs will appear.</p>
-<p>And that is what <strong>Angorithm4 </strong>(aka A4) came for: <strong>Instead of directly jumping into the tar pit, we try to have some low-level systems(llss) first,</strong> the thing "low-level" systems stands for the people who made a <a href="https://en.wiktionary.org/wiki/man-month">man-month</a> project, and can totaly understand each part of this project. we believe that only in this way, we can make a large-system effeciently, The hardest single part of building a software system is deciding precisely what to build.</p>
-
-<h3>Latest Release</h3>
-<a href="releaselog/3_37_0.html">MIPS-Simulator</a> (2021-11-26).
-<a class="button" href="download.html">Download</a>
-<a class="button" href="llss.html">All llss</a>
-
-<h3>News</h3>
 
 
 
-<div class="mobileonly">
-<h3>Low-Level Systems</h3>
-<ul class=nounderline>
-<li> <a href="llss.html">Check All</a> </li>
-<li> <a href="mips.html">MIPS-Simulator</a>
-<li> <a href="eval.html">Eval</a>
-<li> <a href="6035.html">6035</a>
-<li> <a href="dragon.html">DraGon</a>
-<li> <a href="a4.html">Angorithm4</a></li>
-<li><a href="osdi.html">OSDI</a></li>
-<li> <a href="games101.html">GAMES101</a> </li>
-<li> <a href="ja.html">JA</a> </li>
-<li> <a href="bustub.html">BusTub</li>
-<li> <a href="wfw.html">wfw</a></li>
-<li> <a href="webinar.html">Webinar</a></li>
-</ul>
-
-</div>
 
 <br clear="both">
 <hr class="xhr">
