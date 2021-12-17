@@ -129,7 +129,7 @@ private:
 	char *sql;
 
 	// Open database
-	retst = sqlite3_open("../../db/indicator/stockdaily.db", &db);
+	retst = sqlite3_open("/var/www/wfw/src/carbon/db/indicator/stockdaily.db", &db);
 
 	if (retst) {
 	    // if != 0, error

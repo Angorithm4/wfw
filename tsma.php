@@ -105,7 +105,7 @@ return false;
     $end = htmlspecialchars($_POST['end']);
     $offset = htmlspecialchars($_POST['offset']);
     $money = htmlspecialchars($_POST['money']);
-    $command = "/var/www/wfw/src/carbon/indicator/stock/a.out 'sma_single_earn' $company $start $end $offset $money";
+    $command = "/var/www/wfw/src/carbon/indicator/stock/a.out sma_single_earn $company $start $end $offset $money";
 
     echo "<pre>$command</pre>";
 
