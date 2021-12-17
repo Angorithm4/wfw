@@ -107,8 +107,8 @@ return false;
     $offset = htmlspecialchars($_POST['offset']);
     $money = htmlspecialchars($_POST['money']);
 
-    $ret = shell_exec("/var/www/wfw/src/carbon/indicator/stock/stock 
-	$module $start $end $offset $money");
+    $ret = shell_exec("/var/www/wfw/src/carbon/indicator/stock/a.out
+	$module $company $start $end $offset $money");
 
     echo "<pre>$ret</pre>"
   ?>
