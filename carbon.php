@@ -103,8 +103,8 @@ return false;
  <p><b>Which Company:</b>                       <input type="text" name="company" /></p>
  <p><b>Start Date (YYYY/MM/DD)</b>                <input type="text" name="start" /></p>
  <p><b>End Date (YYYY/MM/DD)</b>                  <input type="text" name="end" /></p>
- <p><b>SMA Interval:</b>                        <input type="number" name = 'offset' /></p>
- <p><b>Initial Money:</b>                        <input type="number" name = 'money' /></p>
+ <p><b>SMA Interval:</b>                        <input type="number" name = "offset" /></p>
+ <p><b>Initial Money:</b>                        <input type="number" name = "money" /></p>
  <p><b><input type="submit" value="Calculate!"/></b></p>
 </form>
 </div>
