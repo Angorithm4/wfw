@@ -28,7 +28,7 @@ Interpret!<br> The World.
 <li class='mobileonly'><a href="javascript:void(0)" onclick='toggle_div("submenu")'>Menu</a>
 <li class='wideonly'><a href='about.html'>About</a>
 <li class='desktoponly'><a href="docs.html">Documentation</a>
-<li class='desktoponly'><a href="carbon.html">Carbon</a>
+<li class='desktoponly'><a href="carbon.php">Carbon</a>
 <li class='desktoponly'><a href="llss.html">LLSS</a>
 <li class='wideonly'><a href='copyright.html'>Licence</a>
 <li class='desktoponly'><a href="support.html">Support</a>
