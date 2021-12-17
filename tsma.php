@@ -107,11 +107,11 @@ return false;
     $money = htmlspecialchars($_POST['money']);
     $command = "/var/www/wfw/src/carbon/indicator/stock/a.out 'sma_single_earn' $company $start $end $offset $money";
 
-    echo "<pre>$command</pre>"
+    echo "<pre>$command</pre>";
 
     $ret = shell_exec($command);
 
-    echo "<pre>$ret</pre>"
+    echo "<pre>$ret</pre>";
   ?>
 </div>
 
