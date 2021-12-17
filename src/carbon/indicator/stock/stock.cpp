@@ -15,6 +15,7 @@
 
 #include <sqlite3.h>
 #include <iostream>
+#include <cstring>
 #include <stdio.h>
 #include <stdlib.h>
 #include <iomanip>

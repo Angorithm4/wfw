@@ -100,14 +100,15 @@ return false;
 
 <div>
   <?php
+    $module = "sma_single_earn";
     $company = htmlspecialchars($_POST['company']);
     $start = htmlspecialchars($_POST['start']);
     $end = htmlspecialchars($_POST['end']);
     $offset = htmlspecialchars($_POST['offset']);
     $money = htmlspecialchars($_POST['money']);
 
-    $ret = shell_exec("/var/www/wfw/src/carbon/indicator/stock/stock sma_single_earn 
-	$company $start $end $offset $money");
+    $ret = shell_exec("/var/www/wfw/src/carbon/indicator/stock/stock 
+	$module $company $start $end $offset $money");
 
     echo "<pre>$ret</pre>"
   ?>
