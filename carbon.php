@@ -5,18 +5,18 @@
 <html><head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-<link href="index.css" rel="stylesheet">
+<link href="css/index.css" rel="stylesheet">
 <title>Angorithm4 Home Page</title>
-<link href="Sources/logo.png" rel="icon">
+<link href="photo/logo.png" rel="icon">
 <!-- path= -->
 </head>
 <body>
 <div class=nosearch>
 <a href="index.html">
-<img class="logo" src="Sources/logo_dk.png" alt="A4" border="0" width="101" height="101">
+<img class="logo" src="photo/logo_dk.png" alt="A4" border="0" width="101" height="101">
 
 
-<img class="logo" src="Sources/mmm.jpeg" alt="mmm" border="0" width="250" height="104">
+<img class="logo" src="photo/mmm.jpeg" alt="mmm" border="0" width="250" height="104">
 </a>
 <div><!-- IE hack to prevent disappearing logo --></div>
 <div class="tagline desktoponly">
@@ -175,19 +175,19 @@ by these <a href = "people.html">members</a>, including:</p>
   var sponsors = [{
     "name":"Angold Wang",
     "href":"http://angorithm4.org/angoldw",
-    "src":"Sources/people/angold.jpeg",
+    "src":"photo/people/angold.jpeg",
   },{
     "name":"Shuo Feng",
     "href":"http://angorithm4.org/fds",
-    "src":"Sources/people/fds.jpeg",
+    "src":"photo/people/fds.jpeg",
   },{
     "name":"Seahole Tan",
     "href":"http://www.med-studios.com/",
-    "src":"Sources/people/seahole.jpeg",
+    "src":"photo/people/seahole.jpeg",
   },{
     "name":"Yi Zhou",
     "href":"https://www.angorithm4.org/yi",
-    "src":"Sources/people/yi.jpeg",
+    "src":"photo/people/yi.jpeg",
   }];
 
   for(var i=0; i<sponsors.length; i++){sponsors[i].idx = i;}
